@@ -7,6 +7,11 @@ import Capacitor
  */
 @objc(IosSwipePlugin)
 public class IosSwipePlugin: CAPPlugin {
+
+    override public func load() {
+        bridge?.webView?.allowsBackForwardNavigationGestures = true;
+    }
+
     private let implementation = IosSwipe()
 
     @objc func echo(_ call: CAPPluginCall) {
